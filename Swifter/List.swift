@@ -230,12 +230,12 @@ class Cons<T> : ListImpl<T> {
         DLog(.List, "Deinitializing Cons")
     }
 
-    override func internalLeftFold<A>(version: Version, acc: A, f: ((A,T) -> A)) -> A {
+    override func internalLeftFold<A>(version: Version, acc: A, f: (A,T) -> A) -> A {
         let (head, tail) = self.data.get(version)
         return tail.internalLeftFold(version, acc: f(acc, head), f: f)
     }
     
-    override func internalRightFold<A>(version: Version, acc: A, f: ((T,A) -> A)) -> A {
+    override func internalRightFold<A>(version: Version, acc: A, f: (T,A) -> A) -> A {
         let (head, tail) = self.data.get(version)
         return f(head, tail.internalRightFold(version, acc: acc, f: f))
     }
@@ -327,7 +327,6 @@ class Appension<T> : ListImpl<T> {
         if let newData = self.data.set(newTail) {
             return .NewList(newTail)
         } else {
-            NSLog("Returning Appension .NewVersion")
             return .NewVersion(self.data.version!)
         }
     }
@@ -338,9 +337,9 @@ class Appension<T> : ListImpl<T> {
 prefix operator  ^ {}
 prefix func ^ <T> (arr: [T]) -> List<T> {
     var list = List<T>()
-    for i in 1...arr.count {
-        NSLog("\(i) " + list.description)
-        list = arr[arr.count - i]^^list
+    var i = arr.count
+    while i > 0 {
+        list = arr[--i]^^list
     }
     return list
 }

@@ -1,0 +1,576 @@
+commit 1d5c195b20da3b7171cc8966f6ba64f1e6364fd5
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Tue Aug 5 17:08:14 2014 -0400
+
+    Implemented simulation for PartialFunction, Try, and List.
+
+commit a494a9e3f4619a6acc6cdc8a7e2397bd63561559
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Mon Aug 4 16:03:23 2014 -0400
+
+    Additional conformations to Xcode6-Beta5 and beginning of simulations
+
+commit da7676782ed202c288e8c6de024b9f432d05022e
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Mon Aug 4 15:04:54 2014 -0400
+
+    Conformed to Xcode6-Beta5
+
+commit f0108c20fc35423966a87afe6518783889948704
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Thu Jul 31 17:35:11 2014 -0400
+
+    Try<T> now captures .Failures of the protocol TryFailure, of which NSException adopts.
+
+commit e8acf9b360a0fc00b98a00f4cdc3bb43cbefd6ce
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Thu Jul 31 17:31:56 2014 -0400
+
+    Removed unused OnceExecutable.
+
+commit 7a69941f1236326df2c4a1044d9065272f61ca63
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Thu Jul 31 17:31:25 2014 -0400
+
+    Added append functionality
+
+commit c111e983061f0570fe385c61d09fea7c2c3deea8
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Thu Jul 31 17:30:36 2014 -0400
+
+    Added List<T> constructors (^, ^^, ^&^)
+
+commit 6db68f559bd3b562a9a04e964be9c678bf97ca75
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Thu Jul 31 17:20:22 2014 -0400
+
+    Refactored Executable, Promise, Future, etc. Due to the Swift exception paradigm, Promise now contains a non-Try value. Promise and Future should be parametrized on Try<T> should the user wish to capture the notion of a failure. Removed appropriate Promise methods involving Try or exceptions. Awaitable now captures a timeout in a closure to generalize the notion of timing out.
+
+commit ea1a5fe9de3254aa9dfcfbc7c50f1c5a7b5ea9c0
+Merge: 47dd467 8c7c41d
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Tue Jul 29 14:23:35 2014 -0400
+
+    Refactored List to be head- and tail-persistent according to the Sleator, Tarjan, et al. algorithm
+    
+    * impl-persistent-data-structures-refactor:
+      The List is fully persistent.
+      The List works in a majority of cases, but fails when there are multiple overlapping appensions.
+      The List is currently tail-persistent but fails when a circular reference is created.
+
+commit 8c7c41d6ca5a894543c12c9651543b278ca13fcd
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Tue Jul 29 13:54:21 2014 -0400
+
+    The List is fully persistent.
+
+commit a39dfc00524a2c0b672b5a9e4519b68bfae6ebc6
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Mon Jul 28 18:05:49 2014 -0400
+
+    The List works in a majority of cases, but fails when there are multiple overlapping appensions.
+
+commit 8dcaa84809af4f99099bc5cf4d3dc87d329edd88
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Fri Jul 25 11:23:59 2014 -0400
+
+    The List is currently tail-persistent but fails when a circular reference is created.
+
+commit 47dd467e0be6a65f7e3dd24a00ec1132eebd61f9
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Wed Jul 23 15:09:30 2014 -0400
+
+    Commit
+
+commit c06d79c8a97fb0f087628eac7336a39e4de8845d
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Wed Jul 23 11:03:29 2014 -0400
+
+    Both List and Tree are implemented and tested, but without persistence.
+
+commit b9d881e3f93ec98de7994bc09aad323f3f08ca9a
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Tue Jul 22 17:43:19 2014 -0400
+
+    List is implemented and tested, but is inefficiently persistent.
+
+commit bb5a7469ca10aa669b621228893d0836de2a67fe
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Mon Jul 21 17:25:35 2014 -0400
+
+    Cosmetic changes.
+
+commit 44e8b512fe079fb8aa33d9d4de58c087a9750f2c
+Merge: 0d5259a 10f2c8f
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Mon Jul 21 16:41:58 2014 -0400
+
+    Merge branch 'impl-access-modifiers' into impl-persistent-data-structures
+
+commit 10f2c8f381cec22afba5a43f4fea88ea05055fb0
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Mon Jul 21 16:30:21 2014 -0400
+
+    Refactored and conformed to Xcode6-Beta4 (added access modifiers).
+
+commit 13cb07536d187209448705204a88f4da9c5fc123
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Mon Jul 21 15:15:19 2014 -0400
+
+    Merged refactor-callbacks-notificationcenter and conformed to Xcode6-Beta4 (removal of XCTAssertEqualObjects).
+
+commit a4d59a2ec9c8ed99c9d57416b28bfb24191dd1bb
+Merge: dc2295f 308cbb6
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Mon Jul 21 14:00:48 2014 -0400
+
+    Merge branch 'refactor-callbacks-profile-lockedlist' into refactor-callbacks
+
+commit 0d5259af48e74adb76b0aa2dad1523ba9a99ab7c
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Mon Jul 21 13:47:04 2014 -0400
+
+    WIP commit.
+
+commit 4d5a77cfe1dac6a567b12705abdcd0ee5aaa985d
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Wed Jul 16 18:54:09 2014 -0400
+
+    Add files. PersistentDataStructure.swift defines the abstract class that maintains persistency. Concrete classes implement traversal methods that define the class in order to instantiate the data structure.
+
+commit 81fca82dc18922886aecfbae0de635f58438f343
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Tue Jul 15 17:56:19 2014 -0400
+
+    Commit
+
+commit dc2295f6b6b5c17c6f7b82d81b03eda2f290bfcc
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Tue Jul 15 16:40:32 2014 -0400
+
+    Commit.
+
+commit 308cbb693404d31615ecd860fea8539ef05c31f7
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Tue Jul 15 15:47:53 2014 -0400
+
+    Profiled refactor-callbacks-profile-linkedlist
+
+commit 3c34a8c96104ebfad0ede4cf2c86a0b806845e4c
+Merge: bda82c1 c981999
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Tue Jul 15 15:27:32 2014 -0400
+
+    Merge branch 'refactor-callbacks-profile-notificationcenter' into refactor-callbacks-profile-lockedlist
+
+commit bda82c1f3b6827d727fd146c72cb45527f946fa3
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Tue Jul 15 15:26:10 2014 -0400
+
+    Removed SwifterSimulationTests
+
+commit c981999bd3a81d03d06dff3a66864dfbb19c85ea
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Tue Jul 15 15:25:21 2014 -0400
+
+    Refactored simulation.
+
+commit 89f3d58d599fa525ba1633e5189025c701da7cd0
+Merge: 9258d77 a872b18
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Tue Jul 15 14:42:10 2014 -0400
+
+    Merge branch 'refactor-callbacks-profile-lockedlist' into refactor-callbacks-profile-notificationcenter
+
+commit 9258d77acea7a50c0db72900c8bbeb66cf5aa5bb
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Tue Jul 15 14:40:17 2014 -0400
+
+    Cosmetic changes.
+
+commit a872b189509150c34820772be56e4328c7f40234
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Tue Jul 15 14:20:10 2014 -0400
+
+    Callbacks work, with application example. TODO: implement primitives to access main thread.
+
+commit 6ebe5b0876d94c5a3f9ff4e5bd78c3130ea111f0
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Tue Jul 15 11:59:33 2014 -0400
+
+    Conformed LinkedList<T> to Sequence. LinkedList, if kept, should be refactored and given more features.
+
+commit 019a6825afbd4dd79bf05523ef305ad2538a88d2
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Tue Jul 15 11:30:11 2014 -0400
+
+    NSLock+Functional tested. Promise works both with LockedList callbacks and NSNotificationCenter (both use a locked Promise.fold).
+
+commit 40f5c05d4021ceb393954cadb8096d4128d55097
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Mon Jul 14 17:26:53 2014 -0400
+
+    Refactored Promise.fold to be locked (thread-safe). Still uses (now thread-safe) NSNotificationCenter, but may look to use LockedList of callbacks.
+
+commit d13a5eff39b68a9e903a597e5b8644bb9bd157af
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Mon Jul 14 15:36:53 2014 -0400
+
+    Cosmetic changes and to-dos
+
+commit 6167c883fb6cf6ba8f155e7569fbf0366a2074d7
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Fri Jul 11 17:15:26 2014 -0400
+
+    Making cosmetic changes and implementing CallbackNotification, which is crashing in compilation due to being @objc generic.
+
+commit 3115975764ecc39ef99e4417782cc6853d4bd612
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Fri Jul 11 15:17:34 2014 -0400
+
+    Timer implemented and Awaitables and Timer pass tests. (XCTest does not run the main loop automatically.)
+
+commit 4783d8f9a888c0b1a811d57ad1f0bcda57adcb42
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Thu Jul 10 17:39:07 2014 -0400
+
+    Cosmetic changes.
+
+commit b96329dd7b93b510a67b79a3a437230c2ba4aee5
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Thu Jul 10 16:38:58 2014 -0400
+
+    Cosmetic changes.
+
+commit 4d21434de6c8d141feb3ebb99f65dad34a93afa7
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Thu Jul 10 16:25:17 2014 -0400
+
+    Refactored Executable notifications to Promise. Passes all tests.
+
+commit 4e10ba4b6579f5de10498235bc948b8fdc584247
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Thu Jul 10 14:43:56 2014 -0400
+
+    Timer created to wrap NSTimer and allow Swift non-@objc implementations to receive callbacks via Timer.run(((NSTimer!) -> ())). However, the NSTimer is not being scheduled on a run loop, and it does not pass tests.
+
+commit fcf4fd76beae2d5ee81640d8682779981ea82da8
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Wed Jul 9 16:01:35 2014 -0400
+
+    Added [unowned self] in Executable to fix reference cycle. Executable passes tests.
+
+commit 0f248f5d9cc856ed50a1025822aacb5f15e38516
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Wed Jul 9 14:57:27 2014 -0400
+
+    Remove TODO
+
+commit 969659c7983859581bd6307a9e2fd12b9897ae6e
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Wed Jul 9 14:56:52 2014 -0400
+
+    Updated build settings and Logging.
+
+commit 12d460b59667f23cacca00657133fbcb405ea9d2
+Merge: d11746c b8ff251
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Wed Jul 9 13:51:59 2014 -0400
+
+    Merge branch 'test-executable' into test
+
+commit d11746c9b56b6c7a1787bb3c483db5812c7c4ea8
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Wed Jul 9 13:48:24 2014 -0400
+
+    Swifter project configured to build all currently-passing tests (PartialFunction, Try, LinkedList, Array+Functional).
+
+commit 4f51e78687ea8d5238cacae8be28baf3f8227291
+Merge: fc4efb1 c625265
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Wed Jul 9 13:45:50 2014 -0400
+
+    Merge branch 'test-linkedlist' into test
+
+commit b8ff25150231435f556d434f58c26f218c9968d5
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Wed Jul 9 13:37:23 2014 -0400
+
+    Hacked to have Executable fully tested. CallbackNotification needs to be changed to just wrap value in userInfo, but currently is void until NSDictionary bridging is better. NSNotificationCenter creates an anonymous object only so that the selector in Executable can be accessed; can be changed if Selectors accept Swift function names. TryObject is being used instead of making Try a class (this is preferred as Try really represents concrete, static states).
+
+commit c625265088054aa3f379107cdef2cae8f9f7d48e
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Mon Jul 7 16:59:57 2014 -0400
+
+    LinkedList passes all tests.
+
+commit fc4efb1c693f8f27805157fdac10fba626da5eec
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Mon Jul 7 16:32:28 2014 -0400
+
+    Try passes all tests.
+
+commit 1a9a372b0369f193ac83dac666d9ad29a803bb50
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Mon Jul 7 16:26:10 2014 -0400
+
+    Branch test compiles and is now testable.
+
+commit 3d1429f0bc17c1457ed958a4da0c2176133ebfa8
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Mon Jul 7 15:30:42 2014 -0400
+
+    Conformed to Xcode6-Beta3 and wrote generic workaround (using array). Compilation crashes on new error now.
+
+commit 15e0182ba19f6d9697c28331996a754098f6e98a
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Mon Jul 7 15:24:38 2014 -0400
+
+    Conformed to Xcode6-Beta3.
+
+commit 22ae2540289b2d5503dce93ddffb6c78f3e19858
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Mon Jul 7 14:21:42 2014 -0400
+
+    Small fixes.
+
+commit 770bc8dbeca1cfdd5da3f429e4a91fbcf5a708e0
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Mon Jul 7 13:58:00 2014 -0400
+
+    All tests implemented, but not evaluated. Swift compiler must be fixed to truly test generics, and a try-catch system for Swift must be created.
+
+commit 1c3e370f0f65a778c292953b1c1c0ebd1bd8ada3
+Author: djh325 <djh325@cornell.edu>
+Date:   Wed Jul 2 23:31:17 2014 -0400
+
+    Rebased Swifter
+
+commit 53f214fa0fb0c1a21e5add5e4441adcdab262112
+Merge: c6bdcc0 062cdff
+Author: djh325 <djh325@cornell.edu>
+Date:   Wed Jul 2 23:13:40 2014 -0400
+
+    Rebased Swifter to clean git history. Swifter.Concurrency near completion, but verfication dependent on Swift compiler fixing. TODO included.
+
+commit c6bdcc0e65c4b1824123f6a3f56261c80c66bffc
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Tue Jul 1 14:52:37 2014 -0400
+
+    Swifter.Concurrency is refactored into three entities: Promises, state endpoints of asynchronous computations; Futures, wrappers for Promises and computation managers; and Executables, wrappers for asynchronous computation. A Scheduler should be created to abstract thread managing from Future and Executable. Swift compiler error still persists.
+    
+    Added TODO
+
+commit 6a7fb72ee66996375d478477c575a68e90088a4e
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Wed Jun 25 11:04:15 2014 -0400
+
+    Try<T> is fully implemented and documented with tests written. Tests have not been run due to Swift compiler error which should be fixed.
+
+commit cb12b3fe499fd60953494c516a380ec73fdfb4f7
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Thu Jun 19 17:21:02 2014 -0400
+
+    Futures, Promises, and Trys roughly implemented, but the Swift compiler crashes when compiling generics. Futures and Promises encapsulate failures and success internally via Trys. Futures and Promises should be reimplemented for better control and chaining. A Scheduler should be implemented to coordinate thread creation and control.
+
+commit 7c2f1589af245bf3d8d4f38acd5a1997a2cc58c7
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Wed Jun 18 18:17:58 2014 -0400
+
+    PartialFunction is fully implemented and tested for now, but infix syntax still stalls. Bug radar submitted.
+
+commit 4c5fde8c665793e39635f38a006e204df034f9dd
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Fri Jun 13 13:38:50 2014 -0400
+
+    Updated PartialFunction with cosmetic changes and pattern matching functionality. Infix syntax implemented but should change and causes compiler stall. Additional functional extensions should include decorated/persistent data structures.
+
+commit 062cdffbb33477dd582ab6dc4be10c744a4f7648
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Wed Jul 2 18:08:55 2014 -0400
+
+    Add TODO
+
+commit d4ac74c1dd49553de43373ebfa3d945555ad5ec4
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Wed Jul 2 18:08:08 2014 -0400
+
+    Cosmetic changes and tests written. TODO: finish writing tests, and check once Swift compiler is fixed.
+
+commit 9ebef80c17018bab2a0dda4fbe0c4d70ba72d4f3
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Tue Jul 1 14:52:37 2014 -0400
+
+    Swifter.Concurrency is refactored into three entities: Promises, state endpoints of asynchronous computations; Futures, wrappers for Promises and computation managers; and Executables, wrappers for asynchronous computation. A Scheduler should be created to abstract thread managing from Future and Executable.
+
+commit d3ff0d8daad721e94f8e3e4120a40eeeb01e2792
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Fri Jun 27 17:43:41 2014 -0400
+
+    Try<T> is fully implemented and documented; tests are ready for when Swift compiles generics correctly.
+
+commit 57ce4a93705fcd598b81c7d120dea9822533fafc
+Merge: 836d229 0b8c1c6
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Fri Jun 27 15:26:49 2014 -0400
+
+    Merge branch 'impl' into refactor
+
+commit 0b8c1c6907f8a2bf8a5ecadcb0666e95d7b58f6a
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Fri Jun 27 15:23:09 2014 -0400
+
+    Provided design outline/TODOs. Redesign, reimplementation, and refactoring necessary, along with documentation.
+
+commit 4c1aaf413213252bf210d08b601462080996ddf5
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Thu Jun 26 16:40:23 2014 -0400
+
+    Getting generic compiler error. Branching to test.
+
+commit 98e4013eecceadb7894b91d0c4c6ffe78a68aa42
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Thu Jun 26 11:04:29 2014 -0400
+
+    committing to later test rebasing
+
+commit 7fa02c2287dc9526bde5399577d3fbe111b678c6
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Wed Jun 25 11:04:15 2014 -0400
+
+    Commit
+
+commit df30753b038694ead56578c1efda3cac5f950d14
+Merge: a676c76 836d229
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Tue Jun 24 17:10:21 2014 -0400
+
+    Merge branch 'refactor'
+
+commit 836d229283da53e18d8fe6b025d1fbe448e26895
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Tue Jun 24 17:08:32 2014 -0400
+
+    Try<T> expanded and slightly tested. Swift beta causes problems (generic enums and testing).
+
+commit 780b2c9439165f8675b72f44af2d87f961a6f2fd
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Tue Jun 24 16:20:17 2014 -0400
+
+    Commit
+
+commit f8dc7dc6fa154b5de0b62dd3b987792b2f6a94f2
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Tue Jun 24 15:36:47 2014 -0400
+
+    Commit
+
+commit 63693a094b5cc93ab14baf716bef3cfcc9f6c060
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Tue Jun 24 14:08:28 2014 -0400
+
+    PromiseState.Failure factored into PromiseState<Try<T>>, but a Future.map design needs to be chosen (callback vs. GCD, or experimentation). JDeferred in Aviate uses callbacks.
+
+commit e3873e70e0d238d7c2f07cdadd776f6b1f0de05b
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Mon Jun 23 18:26:32 2014 -0400
+
+    Refactoring Swifter.Concurrency. Future<T> redesigned to encapsulate failures (Try<T>), but there are issues with mapping/binding.
+
+commit a676c76767c5806e2e554f86d975b6e6239892ad
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Mon Jun 23 15:30:24 2014 -0400
+
+    Cosmetic changes.
+
+commit 173758b34772d436142c4077a1000cc7fc77455d
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Fri Jun 20 15:49:11 2014 -0400
+
+    Naive Scheduler created
+
+commit 1c2bd10ecacf6ec771bbfd497d682f1cf9cec337
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Thu Jun 19 17:21:02 2014 -0400
+
+    Futures/Promises are roughly implemented but there is a compiler error with Promise generics. Futures/Promises TBI better to allow for better control and chaining. Scheduler TBI to coordinate thread creation and control.
+
+commit e622e12cd522db51a856d26baddc7f089c91240f
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Thu Jun 19 11:40:42 2014 -0400
+
+    PartialFunction finished for now (operators TBC as project develops). Data structures and decorations TBI.
+
+commit 5a8b5188cc5b147440c45cc0ba7ec0cc181944cb
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Wed Jun 18 18:17:58 2014 -0400
+
+    PartialFunctionTests still stalls; PartialFunction.AndThen.isDefinedAt is perhaps slow. Array+Functional TBI. Decorative data structures TBI. Additional PartialFunction methods TBI. Futures and promises TBI. TODO: Create beta radar for PartialFunctionTests.
+
+commit 0b78825948c6d1cc151e424cd3a49a19cf4d5e15
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Tue Jun 17 16:34:02 2014 -0400
+
+    LinkedListGenerator is causing Xcode to crash. Infix operators still cause compilation delays. Swifter.TBD beginning.
+
+commit 7c3121bc01e42b8f387cef6b14c0ba58a2389c40
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Tue Jun 17 10:04:05 2014 -0400
+
+    Changed some infix operators. =|= defines a PartialFunction. This commit has a somewhat slow but manageable compilation time; there is still compilation stalling with in-lined pattern matching.
+
+commit a34562a745f715a3506fb3d7bf658ae4774d67a8
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Mon Jun 16 18:08:48 2014 -0400
+
+    <|> should be redesigned to fix compilation ambiguity/stalling, and because it causes redundancy in pattern matching.
+
+commit 124e563286bda8f37226033e66582f919d88b60d
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Mon Jun 16 14:08:34 2014 -0400
+
+    Abandoning Array+Deconstruction.swift; unable to nicely bind identifiers
+
+commit 1627661fb0cb0c8a8f77b3e792605f1ed5a16909
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Mon Jun 16 12:01:53 2014 -0400
+
+    Pattern matching syntax includes <|>, =>, |, and ~|>, but should redesign PartialFunction initializer (<|>).
+
+commit 6facd1e8e3c6abb35356b05631d078c7f7164d28
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Fri Jun 13 16:58:16 2014 -0400
+
+    Added PatternMatching functionality and infix operators to create an easy syntax, although subject to change. PatternMatch can be simplified while maintaining expressiveness.
+
+commit 4916d869859857cd377f67c6388c31d1b86c457c
+Author: Daniel Hanggi <dhanggi@yahoo-inc.com>
+Date:   Fri Jun 13 13:38:50 2014 -0400
+
+    Changed Match to Defined to better reflect behavior. Fixed AndThen.isDefinedAt. Working on expressive pattern matching.
+
+commit 92db390f79742a2c6012e1a16e0f0dcc343d3312
+Author: Adam <adkapx@gmail.com>
+Date:   Thu Jun 5 18:45:39 2014 -0400
+
+    Update README.md
+    
+    Added code examples and references
+
+commit 14d49227821c25e0dc79daa40488c63ff4295c30
+Author: adamkaplan <adamkaplan@yahoo-inc.com>
+Date:   Thu Jun 5 15:26:21 2014 -0400
+
+    PartialFunction implementation & tests
+
+commit e5e87b8a8cc343dcfe14bae13aa021aaf493cb5c
+Author: adamkaplan <adamkaplan@yahoo-inc.com>
+Date:   Tue Jun 3 17:17:04 2014 -0400
+
+    Add initial Xcode project
+
+commit 121af6d657f6a36116fad2fe4607a839ccbae148
+Author: Adam <adkapx@gmail.com>
+Date:   Tue Jun 3 15:17:01 2014 -0400
+
+    Initial commit

@@ -355,8 +355,9 @@ class Appension<T> : ListImpl<T> {
 prefix operator  ^ {}
 prefix func ^ <T> (arr: [T]) -> List<T> {
     var list = List<T>()
-    for i in 1...arr.count {
-        list = arr[arr.count - i]^^list
+    var i = arr.count
+    while i > 0 {
+        list = arr[--i]^^list
     }
     return list
 }

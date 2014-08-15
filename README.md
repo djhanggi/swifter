@@ -197,9 +197,12 @@ getEvenStringsL(l3).description // "[|A||C|]"
 Issues
 =======
 
-* Xcode6-Beta5 cannot compile generic types (workaround: wrap T as [T])
-* Xcode6-Beta5 has difficulty inferencing types
-
+* Xcode6-Beta5 cannot compile generic types (workaround: wrap T as [T]).
+* Xcode6-Beta5 has difficulty inferencing types.
+* List.append is not thread-safe (PersistentData access).
+* There are no concurrency or memory usage tests.
+* Nil, Cons, Appension are not private.
+* Demo can be cleaned.
 
 Future Developments
 =======
@@ -212,6 +215,7 @@ Future Developments
 * Implement List pattern matching
 * Simplify the creation of PartialFunctions
 * Implement concurrent data structure operations (e.g., List.concurrentLeftFold<A>(acc: A, f: (A,T) -> A) -> Future<A>)
+* Bridge to Objective-C(?)
 
 Notes
 =======
